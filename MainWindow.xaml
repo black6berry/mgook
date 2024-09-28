@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mgok2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MGOK" 
+        MinHeight="450" 
+        MinWidth="800"
+        Width="800"
+        Height="490"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Frame 
+            Grid.RowSpan="3"
+            Name="FrameMain" 
+            NavigationUIVisibility="Hidden"
+            />
     </Grid>
 </Window>

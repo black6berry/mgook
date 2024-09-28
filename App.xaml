@@ -4,6 +4,30 @@
              xmlns:local="clr-namespace:mgok2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Style TargetType="Button" x:Key="BtnDefault">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TxbDefault">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="PasswordBox" x:Key="PsswdDefault">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
     </Application.Resources>
 </Application>
