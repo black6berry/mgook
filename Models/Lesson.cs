@@ -20,6 +20,8 @@ namespace mgok2.Models
         public long DateTimeEnd { get; set; }
         public string RoomNumber { get; set; }
         public int TeacherId { get; set; }
+        public Nullable<bool> AdditionalEducation { get; set; }
+        public string Address { get; set; }
     
         public virtual Subject Subject { get; set; }
         public virtual User User { get; set; }

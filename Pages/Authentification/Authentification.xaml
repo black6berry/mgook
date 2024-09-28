@@ -23,7 +23,8 @@
                     FontSize="25"
                     FontWeight="Bold"
                     FontStyle="Normal"
-                    Margin="0 35 0 0"/>
+                    Margin="0 35 0 0"
+                    />
                 
             </StackPanel>
             
@@ -31,12 +32,15 @@
                 <StackPanel Margin="0 18 0 0">
                     <Label 
                         Content="Логин"
-                        FontSize="16"/>
+                        FontSize="16"
+                        />
                     <TextBox 
                         Name="TxbLogin"
                         Height="20"
-                        BorderBrush="Transparent"
-                        Style="{StaticResource TxbDefault}"/>
+                        BorderBrush="Black"
+                        Style="{StaticResource TxbDefault}"
+                        
+                        />
                 </StackPanel>
 
                 <StackPanel Margin="0 18 0 0">
@@ -47,7 +51,7 @@
                         Name="PsbPasswd" 
                         PasswordChar="*"
                         Height="20"
-                        BorderBrush="Transparent"
+                        BorderBrush="Black"
                         Style="{StaticResource PsswdDefault}"
                         />
 
@@ -56,9 +60,11 @@
                         Content="Войти"
                         Margin="0 55 0 0"
                         Height="25"
-                        Style="{StaticResource BtnDefault}"/>
+                        Style="{StaticResource BtnDefault}"
+                        Click="BtnAuth_Click"/>
                 </StackPanel>
             </StackPanel>
+            
             <!--<GroupBox Header="Логин">
                 <TextBox 
                     Name="TxbLogin" 
