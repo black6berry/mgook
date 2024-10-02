@@ -11,6 +11,49 @@
     <Grid>
         <StackPanel Background="#F3F9FB">
             <Label Content="Админ"/>
+
+            <DataGrid
+                Name="DgUser"
+                AutoGenerateColumns="False"
+                RowBackground="#2FC2D0"
+                AlternatingRowBackground="White"
+                Background="Transparent"
+                Foreground="Black"
+                FontFamily="Intro"
+                FontWeight="Bold">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                        Header="ID"
+                        Binding="{Binding Id}"
+                        Width="1"/>
+                    <DataGridTextColumn 
+                        Header="Firstname"
+                        Binding="{Binding Firstname}"
+                        Width="*"/>
+                   <DataGridTextColumn 
+                        Header="Lastname"
+                        Binding="{Binding Lastname}"
+                        Width="*"/>
+                    <DataGridTextColumn 
+                        Header="Patronymic"
+                        Binding="{Binding Patronymic}"
+                        Width="*"/>
+                    <DataGridComboBoxColumn
+                        Header="Role"
+                        Width="*">
+                        
+                    </DataGridComboBoxColumn>
+                    <DataGridTextColumn 
+                        Header="Phone"
+                        Binding="{Binding Phone}"
+                        Width="*"/>
+                    <DataGridTextColumn 
+                        Header="Email"
+                        Binding="{Binding Email}"
+                        Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
+        
     </Grid>
 </Page>

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using mgok2.Helpers;
+using mgok2.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,33 @@ namespace mgok2.Pages.Admin
     /// </summary>
     public partial class PageMainAdmin : Page
     {
+        private List<User> users = new List<User>();
+
         public PageMainAdmin()
         {
             InitializeComponent();
+            LoadUser();
+        }
+        // Ф-я загрузки пользователей из БД
+        public void LoadUser()
+        {
+            try
+            {
+                var data = Connecting.conn.User.ToList();
+
+                if (data != null)
+                {
+                    users = data;
+                    DgUser.ItemsSource = users.ToList();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", $"Ошибка получения данных пользователей {ex}", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
