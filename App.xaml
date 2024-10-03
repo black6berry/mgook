@@ -5,8 +5,17 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
+        <FontFamily x:Key="IntroRegular">/resources/fonts/IntroRegular.ttf#Intro Regular</FontFamily>
+        <FontFamily x:Key="IntroBlack">/resources/fonts/IntroBlack.ttf#Intro Black</FontFamily>
+        <FontFamily x:Key="IntroBold">/resources/fonts/IntroBold.ttf#Intro Bold</FontFamily>
+        <FontFamily x:Key="IntroLight">/resources/fonts/IntroLight.ttf#Intro Light</FontFamily>
+
+
         <Style TargetType="Button" x:Key="BtnDefault">
             <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="#4F80A1"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource IntroBlack}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>

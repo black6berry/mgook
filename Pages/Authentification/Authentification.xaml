@@ -25,7 +25,6 @@
                     Content="Авторизация"
                     FontSize="25"
                     FontWeight="Bold"
-                    FontStyle="Normal"
                     Margin="0 35 0 0"
                     />
                 
@@ -43,6 +42,8 @@
                         BorderBrush="Transparent"
                         Style="{StaticResource TxbDefault}"
                         MaxLength="50"
+                        
+                        Text="8005553535"
                         />
                     <Line X1="0" X2="200" Stroke="#17388C" />
                 </StackPanel> 
@@ -58,7 +59,8 @@
                         BorderBrush="Transparent"
                         Style="{StaticResource PsswdDefault}"
                         MaxLength="50"
-                        DataContext="Введите "
+                        
+                        Password="1"
                         />
                     <Line X1="0" X2="200" Stroke="#17388C" />
                 </StackPanel>
@@ -73,12 +75,9 @@
                         Content="ВОЙТИ"
                         Width="200"
                         Height="35"
-                        Foreground="White"
-                        FontWeight="Regular"
                         Margin="0 55 0 0"
                         Style="{StaticResource BtnDefault}"
                         Click="BtnAuth_Click"
-                        Background="#4F80A1"
                         Panel.ZIndex="1"
                            />
                     <Rectangle

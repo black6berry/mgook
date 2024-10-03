@@ -1,9 +1,12 @@
 ﻿using mgok2.Helpers;
 using mgok2.Models;
+using mgok2.Windows.Admin;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Resources;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,19 +32,22 @@ namespace mgok2.Pages.Admin
         {
             InitializeComponent();
             LoadUser();
+            //DgCmbRole.ItemsSource = 
+
         }
         // Ф-я загрузки пользователей из БД
         public void LoadUser()
         {
             try
             {
-                var data = Connecting.conn.User.ToList();
+                var data = Connecting.conn.User.Include(x => x.Role).ToList();
+                var roles = Connecting.conn.Role.ToList();
 
                 if (data != null)
                 {
                     users = data;
                     DgUser.ItemsSource = users.ToList();
-
+                    
                 }
 
             }
@@ -50,6 +56,18 @@ namespace mgok2.Pages.Admin
                 MessageBox.Show("Ошибка", $"Ошибка получения данных пользователей {ex}", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+        }
+
+        // Удаление пользователя 
+        private void DeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        // Добавление пользователя
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+            AdminAddUser windowAdminAddUser = new AdminAddUser();
+            windowAdminAddUser.Show();
         }
     }
 }

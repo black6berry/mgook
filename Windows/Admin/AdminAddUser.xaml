@@ -1,0 +1,67 @@
+﻿<Window x:Class="mgok2.Windows.Admin.AdminAddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mgok2.Windows.Admin"
+        mc:Ignorable="d"
+        Title="МГОК - Добавить пользователя"
+        Height="470" 
+        Width="400"
+        ResizeMode="NoResize">
+    <Grid Background="#F3F9FB">
+        <StackPanel Width="300">
+            <Label 
+                Content="Добавление нового пользователя"
+                HorizontalAlignment="Center"
+                Margin="0 10 0 0"
+                FontSize="16"/>
+
+            <StackPanel Margin="0 10 0 0">
+                <GroupBox Header="Имя">
+                    <TextBox 
+                        Name="TxbFirstname"
+                        />
+                </GroupBox>
+                <GroupBox Header="Фамилия">
+                    <TextBox 
+                        Name="TxbLastname"/>
+                </GroupBox>
+                <GroupBox Header="Отчество">
+                    <TextBox 
+                        Name="TxbPatronymic"/>
+                </GroupBox>
+                <GroupBox Header="Роль в системе">
+                    <ComboBox 
+                        Name="CmbRole"
+                        DisplayMemberPath="Id"
+                        SelectedItem="1"
+                        SelectedValuePath="Name"/>
+                </GroupBox>
+                <GroupBox Header="Телефон">
+                    <TextBox 
+                        Name="TxbPhone"/>
+                </GroupBox>
+                <GroupBox Header="Email">
+                    <TextBox 
+                        Name="TxbEmail"/>
+                </GroupBox>
+                <GroupBox Header="Пароль">
+                    <PasswordBox 
+                        Name="PswdUser"/>
+                </GroupBox>
+                <GroupBox Header="Повторите пароль">
+                    <PasswordBox 
+                        Name="PswdUserRepeat"/>
+                </GroupBox>
+            </StackPanel>
+
+            <Button 
+                Name="BtnAddUser"
+                Content="Добавить пользователя"
+                Margin="0 20 0 0"
+                Style="{StaticResource BtnDefault}"
+                Height="25"/>
+        </StackPanel>
+    </Grid>
+</Window>

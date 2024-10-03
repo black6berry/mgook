@@ -8,19 +8,57 @@
       d:DesignHeight="490" d:DesignWidth="800"
       Title="PageMainAdmin">
 
-    <Grid>
-        <StackPanel Background="#F3F9FB">
-            <Label Content="Админ"/>
+    <Grid Background="#F3F9FB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        
+        <Label 
+            Content="Админ"
+            FontSize="18"
+            VerticalAlignment="Center"
+            Margin="10 0 0 0"/>
+        
+        <StackPanel 
+            Grid.Row="0"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right"
+            Margin="0 0 10 0">
+            <Button 
+                x:Name="AddUser"
+                Content="Добавить"
+                Width="100"
+                Height="25"
+                Margin="0 0 10 0"
+                Style="{StaticResource BtnDefault}"
+                Click="AddUser_Click"/>
+            <Button 
+                x:Name="DeleteUser"
+                Content="Удалить"
+                Width="100"
+                Height="25"
+                Margin="0 0 10 0"
+                Style="{StaticResource BtnDefault}"
+                Click="DeleteUser_Click"/>
+            
+        </StackPanel>
 
+        <ScrollViewer
+            Grid.Row="2">
             <DataGrid
+                Grid.Row="1"
                 Name="DgUser"
                 AutoGenerateColumns="False"
+                CanUserAddRows="False"
                 RowBackground="#2FC2D0"
                 AlternatingRowBackground="White"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden"
                 Background="Transparent"
                 Foreground="Black"
                 FontFamily="Intro"
-                FontWeight="Bold">
+                
+                FontWeight="Regular">
                 <DataGrid.Columns>
                     <DataGridTextColumn 
                         Header="ID"
@@ -30,7 +68,7 @@
                         Header="Firstname"
                         Binding="{Binding Firstname}"
                         Width="*"/>
-                   <DataGridTextColumn 
+                    <DataGridTextColumn 
                         Header="Lastname"
                         Binding="{Binding Lastname}"
                         Width="*"/>
@@ -38,11 +76,11 @@
                         Header="Patronymic"
                         Binding="{Binding Patronymic}"
                         Width="*"/>
-                    <DataGridComboBoxColumn
+                    <DataGridTextColumn
                         Header="Role"
-                        Width="*">
-                        
-                    </DataGridComboBoxColumn>
+                        Binding="{Binding Role.Name}"
+                        Width="*"/>
+
                     <DataGridTextColumn 
                         Header="Phone"
                         Binding="{Binding Phone}"
@@ -51,9 +89,23 @@
                         Header="Email"
                         Binding="{Binding Email}"
                         Width="*"/>
+
+                    <DataGridTemplateColumn Header="RoleSelect">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox
+                                      ItemsSource="{Binding DataContext.Roles, 
+                                      RelativeSource={RelativeSource AncestorType=Window}}"
+                                      DisplayMemberPath="Name"
+                                      SelectedValuePath="Id"
+                                      SelectedValue="{Binding RoleId}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
-        
+
+        </ScrollViewer>
+
     </Grid>
 </Page>
