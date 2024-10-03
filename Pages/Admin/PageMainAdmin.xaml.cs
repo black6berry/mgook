@@ -61,7 +61,33 @@ namespace mgok2.Pages.Admin
         // Удаление пользователя 
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                var user = DgUser.SelectedItem as User;
+
+                if (user != null)
+                {
+                    var result = MessageBox.Show("Вы действительно хотите удалить выбранную запись?", "Подтвердите", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        Connecting.conn.User.Remove(user);
+
+                        Connecting.conn.SaveChanges();
+
+                        MessageBox.Show("Запись успешно удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                        LoadUser();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Удаление невозможно.\nНе выбрана строка", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Ошибка удаления: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         // Добавление пользователя
         private void AddUser_Click(object sender, RoutedEventArgs e)
