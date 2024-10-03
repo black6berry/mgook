@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mgok2.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,21 @@ namespace mgok2.Windows.Admin
         public AdminAddUser()
         {
             InitializeComponent();
+            GetRolesUser();
+        }
+
+        private void GetRolesUser()
+        {
+            var data = Connecting.conn.Role.ToList();
+
+            if (data != null)
+            {
+                CmbRole.ItemsSource = data;
+            }
+            else
+            {
+                MessageBox.Show("В таблице не найдено ни одной роли", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

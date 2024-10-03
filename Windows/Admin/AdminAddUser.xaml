@@ -34,9 +34,9 @@
                 <GroupBox Header="Роль в системе">
                     <ComboBox 
                         Name="CmbRole"
-                        DisplayMemberPath="Id"
-                        SelectedItem="1"
-                        SelectedValuePath="Name"/>
+                        SelectedValuePath="Id"
+                        DisplayMemberPath="Name"
+                        SelectedItem="1"/>
                 </GroupBox>
                 <GroupBox Header="Телефон">
                     <TextBox 
