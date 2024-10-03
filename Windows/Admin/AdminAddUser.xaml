@@ -9,8 +9,8 @@
         Height="470" 
         Width="400"
         ResizeMode="NoResize">
-    <Grid Background="#F3F9FB">
-        <StackPanel Width="300">
+    <Grid x:Name="grid" Background="#F3F9FB">
+        <StackPanel Width="300" >
             <Label 
                 Content="Добавление нового пользователя"
                 HorizontalAlignment="Center"
@@ -61,7 +61,8 @@
                 Content="Добавить пользователя"
                 Margin="0 20 0 0"
                 Style="{StaticResource BtnDefault}"
-                Height="25"/>
+                Height="25"
+                Click="BtnAddUser_Click"/>
         </StackPanel>
     </Grid>
 </Window>

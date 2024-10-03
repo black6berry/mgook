@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\VisualTreeHelper.cs" />
     <Compile Include="Windows\Admin\AdminAddUser.xaml.cs">
       <DependentUpon>AdminAddUser.xaml</DependentUpon>
     </Compile>
